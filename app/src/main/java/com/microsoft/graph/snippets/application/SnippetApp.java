@@ -11,6 +11,7 @@ import com.microsoft.graph.core.DefaultClientConfig;
 import com.microsoft.graph.core.IClientConfig;
 import com.microsoft.graph.extensions.GraphServiceClient;
 import com.microsoft.graph.extensions.IGraphServiceClient;
+import com.microsoft.graph.snippets.ServiceConstants;
 import com.microsoft.graph.snippets.inject.AppModule;
 
 import javax.inject.Inject;
@@ -47,6 +48,10 @@ public class SnippetApp extends Application {
         IClientConfig clientConfig = DefaultClientConfig.createWithAuthenticationProvider(
             authenticationProvider
         );
-        return new GraphServiceClient.Builder().fromConfig(clientConfig).buildClient();
+
+        IGraphServiceClient client = new GraphServiceClient.Builder().fromConfig(clientConfig).buildClient();
+        client.setServiceRoot(ServiceConstants.AUTHENTICATION_RESOURCE_ID + ServiceConstants.API_VERSION);
+
+        return client;
     }
 }
