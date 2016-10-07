@@ -78,7 +78,7 @@ To use the Microsoft Graph SDK snippets project, you need the following:
 * A registered Azure application with a client id and redirect URI value. See [Grant permissions to the Snippets application in Azure](../../../android-java-snippets-rest-sample/wiki/Grant-permissions-for-the-Snippet-application-in-Azure) for details about how to create the correct permissions.
 
 ##Azure client application registration
-1. Sign in to the [Azure Management Portal](https://manage.windowsazure.com), using your Azure AD credentials.
+1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn), using your Azure AD credentials.
 2.	Click **Active Directory** on the left menu, then select the directory for your Office 365 tenant.
 3.	On the top menu, click **Applications**.
 4.	Click **Add** from the bottom menu.
@@ -107,10 +107,12 @@ To use the Microsoft Graph SDK snippets project, you need the following:
 2. Start Android Studio.
 3. From the **Welcome to Android Studio** dialog box, choose **Import project (Eclipse ADT, Gradle, etc)**.
 4. Select the **settings.gradle** file in the **android-java-snippets-sample** folder, and then click **OK**.
-5. Respond to the dialog box ("Gradle Sync: Gradle settings for this project are not configured yet. Would you like the project to use the Gradle wrapper? ") by clicking the **OK** button to use the Gradle wrapper. 
-6. Open the ServiceConstants.java file in the com.microsoft.graph.snippets package.
-7. Find the [`CLIENT_ID`](app/src/main/java/com/microsoft/graph/snippets/ServiceConstants.java#L11) string and set its value to the client id you registered in Azure.
-8. Find the [`REDIRECT_URI`](app/src/main/java/com/microsoft/graph/snippets/ServiceConstants.java#L10) string and set its value to the redirect URI you registered in Azure.
+    > Note: Android Studio might display a dialog box asking to update the Android Gradle Plugin. **Do not choose Update**.
+	
+	![Gradle Plugin Update Dialog](https://raw.githubusercontent.com/microsoftgraph/android-java-connect-rest-sample/Gallatin/readme-images/GradlePluginUpdateDialog.png "Do not update the Android Gradle Plugin") 
+5. Open the ServiceConstants.java file in the com.microsoft.graph.snippets package.
+6. Find the [`CLIENT_ID`](app/src/main/java/com/microsoft/graph/snippets/ServiceConstants.java#L11) string and set its value to the client id you registered in Azure.
+7. Find the [`REDIRECT_URI`](app/src/main/java/com/microsoft/graph/snippets/ServiceConstants.java#L10) string and set its value to the redirect URI you registered in Azure.
 
 ##Run the project
 After you've built the project you can run it on an emulator or device.
